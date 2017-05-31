@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			html,body{ }
+			*{ box-sizing:border-box;}
+			.yzm{ width:75px; height: 35px;;}
+		</style>
+	</head>
+	<body>
+		<div class="yzm"></div>
+		<script type="text/javascript" src="../jquery-1.11.2.min.js" ></script>
+		<script type="text/javascript" src="js/localVerCode.js" ></script>
+		<script>
+			$(function(){
+				var $yzm = $(".yzm");
+				$yzm.wqzLocalVerCode({
+					offsetTop: 13
+				});
+				
+				$(document).on("click",function(){
+					console.info($yzm.data("verCode"));
+				});
+				/*
+				var $yzm = $(".yzm");
+				var $canvas = $("<canvas></canvas>").appendTo($yzm);
+				var bg = "#B0AEAF";
+				var width = $yzm.innerWidth();
+				var height = $yzm.innerHeight();
+				$canvas[0].width = width;
+				$canvas[0].height = height;
+				var ctx = $canvas[0].getContext("2d");
+				if(ctx){
+					ctx.fillStyle = bg;
+					ctx.fillRect(0,0,width,height);
+					ctx.font = "20px Verdana";
+					
+					ctx.fillStyle ="#262626";
+					ctx.fillText("a",10,20,10);
+					
+					ctx.fillStyle ="#262626";
+					ctx.fillText("b",40,30,10);
+				}
+				*/
+			});
+		</script>
+	</body>
+</html>
